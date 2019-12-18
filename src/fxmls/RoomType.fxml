@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="AnchorPaneRoomType" prefHeight="400.0" prefWidth="300.0" stylesheets="@../styling/checkavailable.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.RoomTypeController">
+   <children>
+      <Pane layoutX="6.0" prefHeight="81.0" prefWidth="300.0" styleClass="topPane" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="6.0" layoutY="15.0" text="Danh sách loại phòng" textFill="WHITE">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <MaterialDesignIconView fill="WHITE" glyphName="CLOSE" layoutX="275.0" layoutY="22.0" onMouseClicked="#handleClose" size="22" />
+         </children>
+      </Pane>
+      <TableView fx:id="tbl_roomtype" layoutY="75.0" prefHeight="326.0" prefWidth="300.0" AnchorPane.topAnchor="81.0">
+        <columns>
+          <TableColumn fx:id="col_type" prefWidth="149.0" text="Loại phòng" />
+          <TableColumn fx:id="col_name" prefWidth="150.0" text="Tên loại" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

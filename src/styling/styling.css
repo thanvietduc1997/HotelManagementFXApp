@@ -1,4 +1,24 @@
-#login {
-    -fx-background-color: #eb7a34;
-    -fx-border-radius: 25px;
+.root {
+    -fx-background-color: #DDDDDD;
+}
+
+.cardPane {
+    -fx-background-color: white;
+    -fx-background-radius: 8px;
+}
+
+.topPane {
+    -fx-background-color: #3196DE;
+}
+
+.button {
+    -fx-background-color: #A3D0F0;
+}
+
+.button:hover {
+    -fx-background-color: #C1DFF5;
+}
+
+.button:pressed {
+    -fx-background-color: #75B9E9;
 }

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="cardPane" prefHeight="541.0" prefWidth="600.0" styleClass="root" stylesheets="@../styling/styling.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoginController">
+   <children>
+      <AnchorPane layoutY="-1.0" prefHeight="195.0" prefWidth="600.0" styleClass="topPane">
+         <children>
+            <MaterialDesignIconView fx:id="closeIcon" fill="WHITE" glyphName="WINDOW_CLOSE" layoutX="575.0" layoutY="22.0" onMouseClicked="#handleClose" size="22.0" />
+            <Label alignment="CENTER" layoutX="10.0" layoutY="13.0" text="HỆ THỐNG QUẢN LÝ&#10;KHÁCH SẠN" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="10.0">
+               <font>
+                  <Font name="Courier New Bold" size="38.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+      <AnchorPane layoutX="96.0" layoutY="125.0" prefHeight="342.0" prefWidth="409.0" styleClass="cardPane">
+         <children>
+            <ImageView fitHeight="90.0" fitWidth="90.0" layoutX="160.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/User.png" />
+               </image>
+            </ImageView>
+            <JFXTextField fx:id="txtUsername" layoutX="80.0" layoutY="134.0" onKeyPressed="#handleKeyPressed" prefHeight="46.0" prefWidth="267.0" promptText="Tên đăng nhập" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="80.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXTextField>
+            <JFXPasswordField fx:id="txtPassword" layoutX="80.0" layoutY="204.0" onKeyPressed="#handleKeyPressed" promptText="Mật khẩu" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="80.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXPasswordField>
+            <JFXButton fx:id="btnLogin" buttonType="RAISED" layoutX="149.0" layoutY="282.0" onKeyPressed="#handleKeyPressed" onMouseClicked="#handleLogin" text="Đăng nhập">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXButton>
+            <Label fx:id="lblErrors" alignment="CENTER" layoutX="11.0" layoutY="256.0" text="Label" textAlignment="CENTER" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="9.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

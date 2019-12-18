@@ -1,11 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1">
-    
+<AnchorPane id="AnchorPane" fx:id="mainform" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #FFFFFF;" stylesheets="@../styling/styling.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainFormController">
+   <children>
+      <AnchorPane prefHeight="100.0" prefWidth="600.0" styleClass="topPane">
+         <children>
+            <Label layoutX="82.0" layoutY="27.0" text="GROUP 3" textFill="WHITE">
+               <font>
+                  <Font size="32.0" />
+               </font>
+            </Label>
+            <MaterialDesignIconView fill="WHITE" glyphName="LOGOUT" layoutX="564.0" layoutY="35.0" onMouseClicked="#handleLogout" size="22" />
+            <MaterialDesignIconView fill="WHITE" glyphName="HOME" layoutX="14.0" layoutY="72.0" size="60" text="" />
+            <Label fx:id="lblName" alignment="CENTER_RIGHT" layoutX="409.0" layoutY="18.0" prefHeight="17.0" prefWidth="142.0" text="Label" textAlignment="RIGHT" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+      <GridPane hgap="10.0" layoutX="74.0" layoutY="130.0" prefHeight="236.0" prefWidth="452.0" vgap="10.0" AnchorPane.bottomAnchor="34.0" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="70.0" AnchorPane.topAnchor="130.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="btnCustomerInfo" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#handleCustomerInfo" prefHeight="131.0" prefWidth="268.0" text="Quản lý khách hàng" textAlignment="CENTER">
+               <graphic>
+                  <FontAwesomeIconView fill="#3196de" glyphName="USER" size="60" />
+               </graphic>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </Button>
+            <Button fx:id="btnSearch" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#handleSearch" prefHeight="144.0" prefWidth="269.0" text="Tìm phòng trống" GridPane.columnIndex="1">
+               <graphic>
+                  <FontAwesomeIconView fill="#3196de" glyphName="SEARCH" size="60" />
+               </graphic>
+            </Button>
+            <Button fx:id="btnRoomMn" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#HandleRoomManagement" prefHeight="153.0" prefWidth="329.0" text="Quản lý phòng" GridPane.rowIndex="1">
+               <graphic>
+                  <FontAwesomeIconView fill="#3196de" glyphName="BED" size="60" />
+               </graphic>
+            </Button>
+            <Button alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#handleRequest" prefHeight="162.0" prefWidth="350.0" text="Yêu cầu đặt phòng" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <graphic>
+                  <FontAwesomeIconView fx:id="btnRequest" fill="#3196de" glyphName="CHEVRON_CIRCLE_RIGHT" size="60" />
+               </graphic>
+            </Button>
+         </children>
+      </GridPane>
+   </children>
 </AnchorPane>

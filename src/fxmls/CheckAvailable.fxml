@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="checkAvailableAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../styling/checkavailable.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CheckAvailableController">
+   <children>
+      <Pane prefHeight="81.0" prefWidth="600.0" styleClass="topPane">
+         <children>
+            <Label layoutX="127.0" layoutY="18.0" text="TÌM KIẾM PHÒNG TRỐNG" textFill="WHITE">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <MaterialDesignIconView fill="WHITE" glyphName="ARROW_LEFT" layoutX="7.0" layoutY="29.0" onMouseClicked="#handleGoBack" size="30" />
+            <MaterialDesignIconView fill="WHITE" glyphName="CLOSE" layoutX="564.0" layoutY="29.0" onMouseClicked="#handleClose" size="30" />
+         </children>
+      </Pane>
+      <GridPane hgap="5.0" layoutX="14.0" layoutY="128.0" prefHeight="150.0" prefWidth="280.0" vgap="10.0" AnchorPane.leftAnchor="14.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="285.0" minWidth="10.0" prefWidth="88.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="497.0" minWidth="0.0" prefWidth="172.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="87.0" text="Ngày đến">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <JFXDatePicker fx:id="dpArrival" prefHeight="26.0" prefWidth="181.0" GridPane.columnIndex="1" />
+            <JFXDatePicker fx:id="dpDepart" prefHeight="25.0" prefWidth="211.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="10.0" layoutY="19.0" prefHeight="25.0" prefWidth="108.0" text="Ngày đi" GridPane.rowIndex="1">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="10.0" layoutY="73.0" prefHeight="25.0" prefWidth="108.0" text="Loại phòng" GridPane.rowIndex="2">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <JFXComboBox fx:id="cbRoomType" prefHeight="25.0" prefWidth="145.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <MaterialDesignIconView glyphName="EYE" onMouseClicked="#handleShow" size="25" wrappingWidth="30.0" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
+      <HBox layoutX="57.0" layoutY="306.0" spacing="20.0">
+         <children>
+            <Button fx:id="btnSearch" mnemonicParsing="false" onMouseClicked="#handleSearch" prefHeight="45.0" prefWidth="87.0" stylesheets="@../styling/styling.css" text="Tìm kiếm" />
+            <Button fx:id="btnRequest" mnemonicParsing="false" onMouseClicked="#handleRedirecting" prefHeight="45.0" prefWidth="87.0" stylesheets="@../styling/styling.css" text="Đặt phòng" />
+         </children>
+      </HBox>
+      <TableView fx:id="tblSearch" editable="true" layoutX="314.0" layoutY="81.0" onMouseClicked="#handleTableClicked" prefHeight="320.0" prefWidth="286.0">
+        <columns>
+          <TableColumn fx:id="col_id" prefWidth="40.0" text="ID" />
+          <TableColumn fx:id="col_type" prefWidth="70.0" text="Loại phòng" />
+            <TableColumn fx:id="col_beds" prefWidth="90.0" text="Số giường ngủ" />
+            <TableColumn fx:id="col_price" prefWidth="85.0" text="Giá" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
